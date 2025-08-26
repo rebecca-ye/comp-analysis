@@ -1,8 +1,20 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Jul 14 20:00:58 2025
+Author: Rebecca Ye
+Updated: Tue Aug 26 2025
+Description: The following file analyzes a given judge's scoring marks spread for all judged events in a given USFSA competition.
+  1. Prompts user for official USFSA website link to full competition results.
+  2. Prompts user to input the judge's full name.
+  3. Searches through each event link to verify if judge participated in that event. 
+  4. Pulls scoring data file if judge participated in the event.
+  4. Returns an excel file summarizing the percentage of marks the judge had within or near the panel range
+    (usually 5-9 judges on each event), with one summary per event.
 
-@author: becca
+Sample Test:
+  1. Run. 
+  2. When prompted for html, input: https://ijs.usfigureskating.org/leaderboard/results/2025/36167/index.asp
+  3. When prompted for judge name, input: Rebecca Ye
 """
 
 import pandas as pd
@@ -324,3 +336,4 @@ for link in S.findAll('a'):
 
 
 final.to_csv("test_html.csv", index=False)
+
